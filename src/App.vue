@@ -1,26 +1,121 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Menu v-model="currentSection"></Menu>
+
+  <ScrollIndicator></ScrollIndicator>
+
+  <Scroller v-model="currentSection">
+    <Section background="pattern0" class="profile">
+        <div class="avatar">
+            <img src="./assets/img/me.png" alt="">
+        </div>
+        <div class="details">
+            <h1>Tim Dusser-Jolly</h1>
+            <h2>Web Developer</h2>
+        </div>
+    </Section>
+
+    <Section background="pattern1">
+        <h3>About Me</h3>
+        <p>23yo living in France.</p>
+        <p>Passionate about code and design.</p>
+        <p>I love Nodejs, Vue.js, Electron, IPFS, UI/UX and more :)</p>
+    </Section>
+
+    <Section background="pattern0" class="work">
+        <h3>My Work</h3>
+
+        <Viewer :items="works"></Viewer>
+    </Section>
+  </Scroller>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Menu from '@/components/Menu';
+import ScrollIndicator from '@/components/ScrollIndicator';
+import Scroller from '@/components/Scroller';
+import Section from '@/components/Section';
+import Viewer from '@/components/Viewer';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    data() {
+        return {
+            currentSection: 0,
+            works: [
+                {
+                    title: 'Dolem',
+                    description: 'A tracker blocker for desktop.',
+                    link: 'https://github.com/tymmesyde/dolem',
+                    preview: '/img/work/dolem.png'
+                },
+                {
+                    title: 'Peario',
+                    description: 'A website to watch Stremio streams together.',
+                    link: 'https://github.com/tymmesyde/peario-client',
+                    preview: '/img/work/peario.png'
+                }
+            ]
+        }
+    },
+    components: {
+        Menu,
+        ScrollIndicator,
+        Scroller,
+        Section,
+        Viewer
+    }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import './assets/scss/main.scss';
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    .profile {
+        .content {
+            gap: 25px;
+        }
+
+        .avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            border: 5px solid $secondary-color;
+            background-color: $tertiary-color;
+            overflow: hidden;
+            transition: transform 0.15s ease-in-out;
+
+            img {
+                width: 100%;
+                filter: blur(10px);
+                transition: filter 0.3s ease-in-out;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+                
+                img {
+                    filter: blur(0px);
+                }
+            }
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            line-height: 45px;
+        }
+    }
+
+    .work {
+        .content {
+            gap: 25px;
+        }
+    }
 }
 </style>

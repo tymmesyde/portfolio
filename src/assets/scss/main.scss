@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Montserrat-Black';
+    src: url('./assets/fonts/Montserrat/Montserrat-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('./assets/fonts/Montserrat/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('./assets/fonts/Montserrat/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+
+::selection {
+    color: $primary-color;
+    background-color: $tertiary-color;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: $primary-color;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Montserrat-Black';
+    font-size: 50px;
+    color: $secondary-color;
+}
+
+h2 {
+    font-family: 'Poppins-Regular';
+    font-size: 30px;
+    color: $tertiary-color;
+}
+
+h3 {
+    margin-bottom: 5px;
+    font-family: 'Montserrat-Black';
+    font-size: 30px;
+    color: $secondary-color;
+}
+
+p {
+    font-family: 'Poppins-Regular';
+    font-size: 20px;
+    color: $tertiary-color;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: $secondary-color;
+    opacity: 0.8;
+    transition: opacity 0.1s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+}
