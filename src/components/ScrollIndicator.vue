@@ -56,7 +56,7 @@ export default {
 
     @media only screen and (max-width: 768px) {
         .mouse {
-            transform: rotate(180deg);
+            opacity: 0;
         }
     }
 </style>
