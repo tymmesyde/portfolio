@@ -21,7 +21,8 @@ export default {
             segments: [
                 'Home',
                 'About',
-                'Work'
+                'Work',
+                'Socials'
             ]
         }
     }

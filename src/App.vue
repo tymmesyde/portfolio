@@ -26,6 +26,21 @@
 
         <Viewer :items="works"></Viewer>
     </Section>
+
+    <Section background="pattern1" class="socials">
+        <h3>Socials</h3>
+        <div class="links">
+            <a href="mailto:tymmesyde@gmail.com">
+                <ion-icon name="mail"></ion-icon>
+            </a>
+            <a href="https://github.com/tymmesyde" target="blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a href="https://dribbble.com/tymmesyde" target="blank">
+                <ion-icon name="logo-dribbble"></ion-icon>
+            </a>
+        </div>
+    </Section>
   </Scroller>
 </template>
 
@@ -115,6 +130,20 @@ export default {
     .work {
         .content {
             gap: 25px;
+        }
+    }
+
+    .socials {
+        .content { 
+            gap: 20px;
+
+            .links {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                font-family: 'Poppins-Regular';
+                font-size: 50px;
+            }
         }
     }
 }
