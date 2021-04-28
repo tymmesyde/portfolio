@@ -18,5 +18,11 @@ module.exports = {
                     isCustomElement: (tag) => tag === 'ion-icon'
                 }
             }));
+        config
+            .plugin('html')
+            .tap(args => {
+                args[0].title = 'timtimtim.xyz'
+                return args
+            });
     }
 };
