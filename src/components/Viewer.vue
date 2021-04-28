@@ -78,8 +78,8 @@ export default {
             clearTimeout(this.debouncer);
                 this.debouncer = setTimeout(() => {
                 
-                if (event.deltaY < 0) this.slideLeft();
-                if (event.deltaY > 0) this.slideRight();
+                if (event.deltaY < 0 || event.deltaX < 0) this.slideLeft();
+                if (event.deltaY > 0 || event.deltaX > 0) this.slideRight();
             }, 100);
         },
         slideTo() {
