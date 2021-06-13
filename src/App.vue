@@ -104,7 +104,7 @@ export default {
             transition: transform 0.15s ease-in-out;
 
             img {
-                width: 100%;
+                height: 100%;
                 filter: blur(10px);
                 transition: filter 0.3s ease-in-out;
             }
